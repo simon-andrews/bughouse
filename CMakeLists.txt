@@ -1,7 +1,8 @@
 project("bughouse-engine")
 
 add_library(bughouse
-    BitBoard.cpp)
+    BitBoard.cpp
+    Board.cpp)
 
 add_executable(bughouse-server
     main.cpp)

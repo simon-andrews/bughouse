@@ -28,12 +28,10 @@ void BitBoard::flip(int x, int y)
 string BitBoard::dump()
 {
   stringstream s;
-  for (int x = 0; x < boardWidth; x++)
+  for (int y = 0; y < boardHeight; y++)
   {
-    for (int y = 0; y < boardHeight; y++)
-    {
+    for (int x = 0; x < boardWidth; x++)
       s << data[toIndex(x, y)];
-    }
     s << endl;
   }
   return s.str();
@@ -41,5 +39,5 @@ string BitBoard::dump()
 
 inline int toIndex(int x, int y)
 {
-  return boardWidth * x + y;
+  return boardHeight * y + x;
 }
