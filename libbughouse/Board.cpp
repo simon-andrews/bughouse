@@ -1,13 +1,16 @@
 #include "Board.h"
 #include <iostream>
+#include "Piece.cpp"
 
 using namespace std;
 
 Board::Board()
 {
-  // Black is on the "bottom" of the board
-  for (int x = 0; x < boardWidth; x++)
-    for (int y = boardHeight - 2; y < boardHeight; y++)
-      colors.set(x, y, true);
-  cout << colors.dump() << endl;
+  Piece piece(Black, Rook);
+  this->set(0, 0, piece);
+}
+
+void Board::set(int x, int y, Piece &piece)
+{
+  data[TO_INDEX(x, y)] = &piece;
 }
