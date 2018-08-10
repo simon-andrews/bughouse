@@ -1,3 +1,4 @@
+#include "ANSIColors.h"
 #include "Board.h"
 #include <iostream>
 
@@ -6,5 +7,5 @@ using namespace std;
 int main()
 {
   Board board;
-  cout << "This is bughouse-engine speaking" << endl;
+  cout << FG_BLACK << "This is bughouse-engine speaking" << FG_RESET << endl;
 }
