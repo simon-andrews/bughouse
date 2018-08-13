@@ -9,7 +9,9 @@ class Board
 {
   public:
     Board();
-    void set(int x, int y, Piece &piece);
+    void set(int x, int y, Piece *piece);
+    Piece *get(int x, int y);
+    void dump();
 
   private:
     Piece *data[64];

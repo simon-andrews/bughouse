@@ -14,7 +14,6 @@ PieceType Piece::getType()
 {
   return type;
 }
-
 const char *Piece::getUtf8Char()
 {
   // There's probably a more clever way to do this with UTF-8 stuff...
