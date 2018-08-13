@@ -9,10 +9,10 @@ class Board
 {
   public:
     Board();
+    void set(int x, int y, Piece &piece);
 
   private:
     Piece *data[64];
-    void set(int x, int y, Piece &piece);
 };
 
 #endif
