@@ -22,6 +22,7 @@ class Piece {
     Piece(Team team, PieceType type);
     Team getTeam();
     PieceType getType();
+    const char *getUtf8Char();
 
   private:
     Team team;
