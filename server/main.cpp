@@ -6,6 +6,17 @@ using namespace std;
 
 int main()
 {
-  Board board;
-  cout << FG_BLACK << "This is bughouse-engine speaking" << FG_RESET << endl;
+  bool a = true;
+  for (int x = 0; x < 8; x++) {
+    for (int y = 0; y < 8; y++) {
+      if (a)
+        cout << BG_MAGENTA;
+      else
+        cout << BG_WHITE;
+      cout << "  ";
+      a = !a;
+    }
+    a = !a;
+    cout << RESET_ANSI << endl;
+  }
 }
