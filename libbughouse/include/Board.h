@@ -3,13 +3,12 @@
 
 #include "Piece.h"
 
-#define TO_INDEX(x, y) (8 * y + x)
-
 class Board
 {
   public:
     Board();
     void set(int x, int y, Piece *piece);
+    void setCN(char column, int row, Piece *piece);
     Piece *get(int x, int y);
     void dump();
 

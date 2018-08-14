@@ -8,5 +8,6 @@ using namespace std;
 int main()
 {
   Board b;
+  b.setCN('d', 6, new Piece(Black, Queen));
   b.dump();
 }

@@ -8,6 +8,16 @@ using namespace std;
 const PieceType backline1[] = {Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook};
 const PieceType backline2[] = {Rook, Knight, Bishop, King, Queen, Bishop, Knight, Rook};
 
+inline int toIndex(int x, int y)
+{
+  return 8 * y + x;
+}
+
+inline int cnToIndex(char column, int row)
+{
+  return toIndex((int) (column - 'a'), 8 - row);
+}
+
 Board::Board()
 {
   // Pointers aren't automatically set to null for some reason
@@ -28,12 +38,17 @@ Board::Board()
 
 void Board::set(int x, int y, Piece *piece)
 {
-  data[TO_INDEX(x, y)] = piece;
+  data[toIndex(x, y)] = piece;
 }
 
 Piece *Board::get(int x, int y)
 {
-  return data[TO_INDEX(x, y)];
+  return data[toIndex(x, y)];
+}
+
+void Board::setCN(char column, int row, Piece *piece)
+{
+  data[cnToIndex(column, row)] = piece;
 }
 
 void Board::dump()
