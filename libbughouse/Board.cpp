@@ -39,8 +39,10 @@ Piece *Board::get(int x, int y)
 void Board::dump()
 {
   bool a = true;
+  cout << "  A B C D E F G H" << endl;
   for (int y = 0; y < 8; y++)
   {
+    cout << 8 - y << ' ';
     cout << FG_BLACK;
     for (int x = 0; x < 8; x++)
     {
@@ -50,6 +52,7 @@ void Board::dump()
       cout << (p != NULL ? p->getUtf8Char() : " ") << ' ';
     }
     a = !a;
-    cout << RESET_ANSI << endl;
+    cout << RESET_ANSI << ' ' << 8 - y << endl;
   }
+  cout << "  A B C D E F G H" << endl;
 }
