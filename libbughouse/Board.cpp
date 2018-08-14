@@ -5,7 +5,8 @@
 
 using namespace std;
 
-PieceType defaultBackLine[] = {Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook};
+const PieceType backline1[] = {Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook};
+const PieceType backline2[] = {Rook, Knight, Bishop, King, Queen, Bishop, Knight, Rook};
 
 Board::Board()
 {
@@ -14,9 +15,9 @@ Board::Board()
     data[i] = NULL;
   for (int x = 0; x < 8; x++)
   {
-    Piece *black = new Piece(Black, defaultBackLine[x]);
+    Piece *black = new Piece(Black, backline1[x]);
     set(x, 0, black);
-    Piece *white = new Piece(White, defaultBackLine[x]);
+    Piece *white = new Piece(White, backline1[x]);
     set(x, 7, white);
     Piece *blackPawn = new Piece(Black, Pawn);
     set(x, 1, blackPawn);
